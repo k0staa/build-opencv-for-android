@@ -2,7 +2,7 @@
 
 An interactive script to download and build opencv and opencv_contrib for android
 
-##Changes From Original Project
+## Changes From Original Project
 I removed part of setup.sh script responsible for downloading Android-ndk because its quite big actually. 
 I also changed part wich checkout to branch 3.1.0. I failed to compile library in version 3.1.0 and checkout to last revision (master).
 
@@ -31,7 +31,7 @@ $ ./build-android-opencv.sh
 The final library will be located in android_lib folder
 
 ### Liecnese
-This rpoject was forked from [THESE] (https://github.com/tzutalin/build-opencv-for-android) orginal project created by Tzu TaLin. Please check his repo and read license provided by him:
+This rpoject was forked from (https://github.com/tzutalin/build-opencv-for-android) orginal project created by TzuTa Lin. Please check his repo and read license provided by him:
  
 Copyright (c) 2016 Tzutalin
 Create by TzuTaLin <tzu.ta.lin@gmail.com>
