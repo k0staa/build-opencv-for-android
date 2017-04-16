@@ -2,6 +2,10 @@
 
 An interactive script to download and build opencv and opencv_contrib for android
 
+##Changes From Original Project
+I removed part of setup.sh script responsible for downloading Android-ndk because its quite big actually. 
+I also changed part wich checkout to branch 3.1.0. I failed to compile library in version 3.1.0 and checkout to last revision (master).
+
 ### Requirements
  - Python >=2.4
  - CMake >=2.8
@@ -12,9 +16,9 @@ $ git clone https://github.com/tzutalin/build-opencv-for-android.git
 $ cd build-opencv-for-android
 $ ./setup.sh 3.1.0
 ```
-By default, it will download opencv and opencv_contrib with 3.1.0 version. You can specify the version when executing ./setup.sh
+By default, it will download opencv and opencv_contrib.
 
-Extract and export your android path which is downloaded under ./android-ndk-downloader
+Please export android NDK path like these:
 
 `$ export [ANDROID_NDK_PATH]`
 
@@ -27,6 +31,8 @@ $ ./build-android-opencv.sh
 The final library will be located in android_lib folder
 
 ### Liecnese
+This rpoject was forked from [THESE] (https://github.com/tzutalin/build-opencv-for-android) orginal project created by Tzu TaLin. Please check his repo and read license provided by him:
+ 
 Copyright (c) 2016 Tzutalin
 Create by TzuTaLin <tzu.ta.lin@gmail.com>
 

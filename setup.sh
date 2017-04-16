@@ -21,24 +21,19 @@
 
 ### path setup
 
-OPENCV_VERSION=3.1.0
+###Changed particular version of library that is used. 
 
+OPENCV_VERSION=10787c68d0cd9df16cca1a56bfe19287cabf847f
+OPENCV_CONTRIB_VERSION=23c02563e40e69ef2f549a97e5c1c9ad3af2328b
 if [ ! -z "$1" ]
   then
     OPENCV_VERSION="$1"
 fi
 
-echo "Opnecv version ${OPENCV_VERSION}"
+echo "Opnecv revision ${OPENCV_VERSION}"
 
 SCRIPT=$(readlink -f $0)
 WD=`dirname $SCRIPT`
-### Download android-ndk-downloader
-if [ ! -d "${WD}/android-ndk-downloader" ]; then
-    echo 'Cloning android-ndk-downloader'
-    git clone --recursive https://github.com/tzutalin/android-ndk-downloader.git
-    cd android-ndk-downloader
-    python download_ndk.py
-fi
 
 cd "${WD}"
 if [ ! -d "${WD}/opencv" ]; then
@@ -46,7 +41,7 @@ if [ ! -d "${WD}/opencv" ]; then
     git clone https://github.com/opencv/opencv.git
 fi
 cd opencv
-git checkout -b "${OPENCV_VERSION}" "${OPENCV_VERSION}"
+git checkout "${OPENCV_VERSION}" 
 
 cd "${WD}"
 if [ ! -d "${WD}/opencv_contrib" ]; then
@@ -54,6 +49,6 @@ if [ ! -d "${WD}/opencv_contrib" ]; then
     git clone https://github.com/opencv/opencv_contrib.git
 fi
 cd opencv_contrib
-git checkout -b "${OPENCV_VERSION}" "${OPENCV_VERSION}"
+git checkout "${OPENCV_CONTRIB_VERSION}"
 
 cd "${WD}"
